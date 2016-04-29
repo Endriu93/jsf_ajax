@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>JSF-AJAX Example 1</title>
+</h:head>
+<h:body>
+	<h2>ON CLICK</h2>
+	<h:form>
+		<h:inputText id="inputName" value="#{userBean.name}">
+		</h:inputText>
+		<h:commandButton value="Show Message">
+			<f:ajax event="click" execute="inputName" render="outputMessage" />
+		</h:commandButton>
+		<h2>
+			<h:outputText id="outputMessage"
+				value="#{userBean.name !=null ?
+            userBean.getWelcomeMessage() : ''}" />
+		</h2>
+	</h:form>
+	<h2>DIAGRAM</h2>
+	<img src="zti_sample1.png" alt="Mountain View" />
+	<h2>ON BLUR EVENT</h2>
+	<h:form>
+		<h:inputText id="inputName" value="#{userBean.name}">
+			<f:ajax event="blur" execute="inputName" render="outputMessage" />
+		</h:inputText>
+		<h2>
+			<h:outputText id="outputMessage"
+				value="#{userBean.name !=null ?
+            userBean.getWelcomeMessage() : ''}" />
+		</h2>
+	</h:form>
+	<h2>ON KEY UP EVENT</h2>
+	<h:form>
+		<h:inputText id="inputName" value="#{userBean.name}">
+			<f:ajax event="keyup" execute="inputName" render="outputMessage" />
+		</h:inputText>
+		<h2>
+			<h:outputText id="outputMessage"
+				value="#{userBean.name !=null ?
+            userBean.getWelcomeMessage() : ''}" />
+		</h2>
+	</h:form>
+	
+	<h2>THIS KEYWORD</h2>
+	<h:form>
+		<h:inputText id="inputName" value="#{userBean.name}">
+			<f:ajax event="keyup" execute="@this" render="outputMessage" />
+		</h:inputText>
+		<h2>
+			<h:outputText id="outputMessage"
+				value="#{userBean.name !=null ?
+            userBean.getWelcomeMessage() : ''}" />
+		</h2>
+	</h:form>
+</h:body>
+</html>

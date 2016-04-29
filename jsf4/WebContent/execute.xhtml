@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:tp="http://java.sun.com/jsf/composite/tutorialspoint">
+   <h:head>
+      <title>JSF-AJAX Listener example</title>
+   </h:head>
+   <h:body>
+      <h2>AJAX EXECUTE</h2>
+      <h:form>
+      <h:inputText id="inputName" value="#{userBean.name}">
+         <f:ajax execute="inputName" event="blur" render="outputMessage" />
+      </h:inputText>
+      <h2><h:outputText id="outputMessage"
+         value="#{userBean.name !=null ?
+            userBean.name : 'null'}"
+         /></h2>
+      </h:form>
+   </h:body>
+</html>
